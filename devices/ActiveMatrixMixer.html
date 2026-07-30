@@ -29,8 +29,8 @@ The output coupling capacitors are switchable between 10µF and 0.1µF. Combined
     <img src="ActiveMatricsMixer.JPG" alt="Active Matrix Mixer" width="240">
     <img src="output_AMM.jpg" alt="Active Matrix Mixer" width="240">
   </section>
-<section>
-  <h2>design notes</h2>
+  <section>
+    <h2>design notes</h2>
 
   <p><strong>Why an inverting amplifier</strong></p>
   <p>
@@ -41,18 +41,25 @@ The output coupling capacitors are switchable between 10µF and 0.1µF. Combined
     capacitor, this lets the signals interfere with each other more
     freely &mdash; which suits the goal here: chaos. Gain is set to 10x.
   </p>
+  <p>
+    Because the summing happens at a real (non-virtual-ground) node
+    before the op-amp stage, each channel's source impedance loads
+    the others directly &mdash; unlike a textbook summing amplifier,
+    where per-channel resistors meet at a low-impedance virtual
+    ground and stay largely independent.
+  </p>
 
   <p><strong>Why the bias is made variable</strong></p>
   <p>
-    The bias voltage is deliberately skewed off-center. 
-    This pushes the waveform into asymmetric clipping between the positive and negative sides, 
-    aiming for intermittent oscillation behavior similar to blocking oscillation. 
-    The schematic shows a 10&micro;F capacitor in
-    parallel with the bias point, but the actual build uses a much
-    smaller value &mdash; this makes the circuit less stable, which
-    is the point.
+    The bias voltage is deliberately skewed off-center. This
+    pushes the waveform into asymmetric clipping between the
+    positive and negative sides, aiming for intermittent
+    oscillation behavior similar to blocking oscillation. The
+    schematic shows a 10&micro;F capacitor in parallel with the bias
+    point, but the actual build uses a much smaller value &mdash;
+    this makes the circuit less stable, which is the point.
   </p>
-</section>
+  </section>
   <section>
     <h2>製作ログ</h2>
     <ul class="plain">
