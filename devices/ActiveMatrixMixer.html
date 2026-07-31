@@ -29,6 +29,47 @@ The output coupling capacitors are switchable between 10µF and 0.1µF. Combined
     <img src="ActiveMatricsMixer.JPG" alt="Active Matrix Mixer" width="240">
     <img src="output_AMM.jpg" alt="Active Matrix Mixer" width="240">
   </section>
+
+  <section>
+  <h2>usage</h2>
+
+  <p><strong>Basic patch</strong></p>
+  <p>
+    Inputs are I1&ndash;I4, outputs are O1&ndash;O4. Start with every
+    mixer knob at minimum.
+  </p>
+  <p>
+    Patch I1&rarr;O2 and I2&rarr;O1. Each output has two jacks, so use
+    the spare one on O1 or O2 to feed an external monitor mixer.
+  </p>
+  <p>
+    This patch routes the signal through two inverting amplifier
+    stages, so the loop returns in phase &mdash; the condition needed
+    for oscillation. Slowly raise the I1-O2 and I2-O1 knobs together
+    until it starts to oscillate. Call this <strong>system A</strong>.
+  </p>
+  <p>
+    Do the same with I3/I4/O3/O4 to start a second, independent
+    oscillating loop &mdash; <strong>system B</strong>.
+  </p>
+
+  <p><strong>Cross-coupling and modulation</strong></p>
+  <p>
+    Raising any of the remaining knobs (e.g. I1&rarr;O4, I3&rarr;O2)
+    couples system A and system B together, letting each loop's
+    oscillation disturb the other's operating point. This produces
+    more complex, less predictable oscillation than either loop
+    running alone.
+  </p>
+  <p>
+    Bias voltage and high-pass filter threshold are independent
+    per output channel &mdash; each of O1&ndash;O4 has its own. Instead
+    of a single global control, this means system A and system B
+    can be tuned with entirely different clipping character and
+    cutoff frequency, then mixed only through the cross-coupling
+    knobs.
+  </p>
+</section>
   <section>
     <h2>design notes</h2>
 
